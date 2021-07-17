@@ -115,20 +115,42 @@ deleteButton.addEventListener('click', function (e) {
     service.deleteUserById(id).then(r => console.log(r));
 });
 
+updateButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    let form = document.getElementById('update-form');
+    let inputFields = form.querySelectorAll('input');
+    let id = findUserButton.previousElementSibling.value;
+
+    let user = {
+        email: inputFields[2].value,
+        firstName: inputFields[0].value,
+        lastName: inputFields[1].value,
+        age: inputFields[3].value
+    };
+
+    service.updateUserById(id, user);
+    [...inputFields].forEach(f => f.value = '');
+    findUserButton.previousElementSibling.value = '';
+    form.style.display = 'none';
+})
+
 findUserButton.addEventListener('click', function () {
     let id = findUserButton.previousElementSibling.value;
     let user = service.getUserById(id);
     let form = document.getElementById('update-form');
     let inputFields = form.querySelectorAll('input');
 
-    form.style.display = 'block';
+        form.style.display = 'block';
     user.then(data => {
+        console.log(data);
         inputFields[0].value = data.firstName;
         inputFields[1].value = data.lastName;
         inputFields[2].value = data.email;
         inputFields[3].value = data.age;
+    })
+    .catch(err => {
+        form.style.display = 'none';
     });
-
 });
 
 

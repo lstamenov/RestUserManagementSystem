@@ -35,7 +35,10 @@ let updateUserById = async (id, user) => {
 
 let getUserById = async (id) => {
     let r =  await fetch(baseUrl + `user/${id}`)
-    .then(resp => resp.json());
+    .then(resp => resp.json())
+    .catch(err => {
+        return undefined
+    });
 
     return r;   
 }

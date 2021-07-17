@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @CrossOrigin("http://localhost:63342")
+    @CrossOrigin("http://127.0.0.1:5500")
     @Transactional
     public ResponseEntity<?> deleteUserById(@PathVariable("id") Long id){
         service.deleteUser(id);
@@ -43,6 +43,7 @@ public class UserController {
     }
 
     @PutMapping("/update/{id}")
+    @CrossOrigin("http://127.0.0.1:5500")
     public ResponseEntity<?> updateUser(@PathVariable("id") Long id, @RequestBody User user){
         service.updateUser(user, id);
         return new ResponseEntity<>(HttpStatus.OK);
