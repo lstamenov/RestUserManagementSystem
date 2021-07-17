@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<ul class="nav">
+    <li><button id="show-all-users">Get All Users</button></li>
+    <li><button id="show-create-element">Add User</button></li>
+    <li><button id="show-update-element">Update User</button></li>
+    <li><button id="show-delete-element">Delete User</button></li>
+</ul>
+<section>
+    
+    <article id="add-user-element">
+        <div id="form-center">
+            <form>
+            <label for="fname"></label>
+            <input type="text" id="fname" name="fname" placeholder="enter first name"><br>
+            <label for="lname"></label>
+            <input type="text" id="lname" name="lname" placeholder="enter last name"><br>
+            <label for="email"></label>
+            <input type="text" id="email" name="email" placeholder="enter email"><br>
+            <label for="age"></label>
+            <input type="text" id="age" name="age" placeholder="enter age"><br><br>
+            <input type="submit" id="submit" value="Submit">
+            </form>
+        </div>
+    </article><br>
+    <article id="delete-user-element">
+        <form>
+            <label for="user_id">enter id</label><br>
+            <input id="user_id"><br>
+            <button id="delete_user">delete user</button>
+        </form>
+    </article><br>
+    <article id="update-user-element">
+        <div>
+            <input type="text" placeholder="enter ID">
+            <input type="submit" value="Find" id="find-user-button">
+        </div>
+        <div id="update-form">
+            <form>
+            <label for="fname"></label>
+            <input type="text" id="fname" name="fname" placeholder="enter new first name"><br>
+            <label for="lname"></label>
+            <input type="text" id="lname" name="lname" placeholder="enter new last name"><br>
+            <label for="email"></label>
+            <input type="text" id="email" name="email" placeholder="enter new email"><br>
+            <label for="age"></label>
+            <input type="text" id="age" name="age" placeholder="enter new age"><br><br>
+            <input type="submit" id="submit-update" value="Submit">
+            </form>
+        </div>
+    </article>
+    <article id="users-table">
+        <table class="center">
+            <tr id="table-head">
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </table>
+    </article>
+</section><br>
+<div id="result">
+
+</div>
+<script type="module" src="scripts/component.js"></script>
+</body>
+</html>
